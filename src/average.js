@@ -11,6 +11,16 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = (array) => {
+  let recebeValores = 0;
 
+  for (let index = 0; index < array.length; index++) {
+    recebeValores = array[index];
+
+    if (array[index] !== Number) {
+      return undefined;
+    }
+   console.log(recebeValores);
+};
+average(10,8);
 module.exports = average;
