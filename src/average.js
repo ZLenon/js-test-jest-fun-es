@@ -13,14 +13,18 @@
 
 const average = (array) => {
   let recebeValores = 0;
+  let vazio = [];
 
-  for (let index = 0; index < array.length; index++) {
-    recebeValores = array[index];
-
-    if (array[index] !== Number) {
+  for (let index = 0; index < array.length; index+= 1) {
+    recebeValores += array[index];
+    vazio = array[index];
+    
+    if (typeof array[index] === 'string' || array.length === 0) {
       return undefined;
     }
-   console.log(recebeValores);
+  }
+  let valorAredondado = Math.round(recebeValores / array.length); 
+  return valorAredondado;     
 };
-average(10,8);
+
 module.exports = average;

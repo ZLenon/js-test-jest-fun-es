@@ -8,13 +8,14 @@
     - numbers([2, 'errado', 5]); // Retorna: false
 */
 
-const numbers = (myArray) => {
-  for (let i = 0; i < myArray.length; i += 1) {
-    if (typeof myArray[i] !== 'number') {
-      return false;
+const numbers = (array) => {
+    
+    for (let index = 0; index < array.length; index+=1) {
+       const recebNum = array[index];
+      if (typeof array[index] === 'number') {
+        return true;
+      } 
+        return false;          
     }
-  }
-  return true;
 };
-
 module.exports = numbers;
