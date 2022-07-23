@@ -10,21 +10,21 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
 const average = (array) => {
   let recebeValores = 0;
-  let vazio = [];
 
-  for (let index = 0; index < array.length; index+= 1) {
+  if (array.length === 0) {
+    return undefined;
+  }
+
+  for (let index = 0; index < array.length; index += 1) {
     recebeValores += array[index];
-    vazio = array[index];
-    
-    if (typeof array[index] === 'string' || array.length === 0) {
+
+   if (typeof array[index] === 'string') {
       return undefined;
     }
   }
-  let valorAredondado = Math.round(recebeValores / array.length); 
-  return valorAredondado;     
+    let valorAredondado = Math.round(recebeValores / array.length);
+    return valorAredondado;
 };
-
 module.exports = average;
