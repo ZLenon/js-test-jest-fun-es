@@ -7,15 +7,12 @@
     - numbers([2, 3, 4]); // Retorna: true
     - numbers([2, 'errado', 5]); // Retorna: false
 */
-
 const numbers = (array) => {
-    
-    for (let index = 0; index < array.length; index+=1) {
-       const recebNum = array[index];
-      if (typeof array[index] === 'number') {
-        return true;
-      } 
-        return false;          
+  for (let index = 0; index < array.length; index += 1) {    
+    if (typeof array[index] !== 'number') {
+      return false;
     }
+  }
+  return true;
 };
 module.exports = numbers;
